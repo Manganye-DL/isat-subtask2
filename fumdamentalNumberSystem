@@ -23,6 +23,29 @@ int binaryToDecimal(const string& binary) {
     return decimal;
 }
 
+string decimalToHex(int decimal) {
+    if (decimal == 0) return "0";
+    string hex = "";
+    char hexDigits[] = "0123456789ABCDEF";
+    while (decimal > 0) {
+        hex = hexDigits[decimal % 16] + hex;
+        decimal /= 16;
+    }
+    return hex;
+}
+
+int hexToDecimal(const string& hex) {
+    int decimal = 0;
+    for (char digit : hex) {
+        decimal *= 16;
+        if (isdigit(digit))
+            decimal += digit - '0';
+        else
+            decimal += toupper(digit) - 'A' + 10;
+    }
+    return decimal;
+}
+
 int main() {
     int choice;
 
