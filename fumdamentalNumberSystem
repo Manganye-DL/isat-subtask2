@@ -62,11 +62,36 @@ int main() {
 
         // Placeholder for switch logic
         switch (choice) {
+            case 1:
+                cout << "Enter a decimal number: ";
+                cin >> decimal;
+                cout << "Binary representation: " << decimalToBinary(decimal) << endl;
+                break;
+            case 2:
+                cout << "Enter a binary number: ";
+                cin >> input;
+                cout << "Decimal representation: " << binaryToDecimal(input) << endl;
+                break;
+            case 3:
+                cout << "Enter a hexadecimal number: ";
+                cin >> input;
+                cout << "Decimal representation: " << hexToDecimal(input) << endl;
+                break;
+            case 4:
+                cout << "Enter a decimal number: ";
+                cin >> decimal;
+                cout << "Hexadecimal representation: " << decimalToHex(decimal) << endl;
+                break;
+            case 5:
+                decimal = rand() % 100; // Random number between 0 and 99
+                cout << "Generated random integer: " << decimal << endl;
+                cout << "Binary representation: " << decimalToBinary(decimal) << endl;
+                break;
             case 6:
                 cout << "Exiting the program.\n";
                 break;
             default:
-                cout << "Feature not yet implemented.\n";
+                cout << "Invalid choice. Please enter a number between 1 and 6.\n";
         }
 
     } while (choice != 6);
