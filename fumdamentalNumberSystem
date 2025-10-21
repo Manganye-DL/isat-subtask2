@@ -1,0 +1,34 @@
+/* 
+Name: Manganye DL
+iD: 0308195854085
+*/
+#include <iostream>
+using namespace std;
+
+int main() {
+    int choice;
+
+    do {
+        cout << "\n--- Number System Converter ---\n";
+        cout << "1. Convert Decimal to Binary\n";
+        cout << "2. Convert Binary to Decimal\n";
+        cout << "3. Convert Hexadecimal to Decimal\n";
+        cout << "4. Convert Decimal to Hexadecimal\n";
+        cout << "5. Demo (Generate and convert random integer to binary)\n";
+        cout << "6. Exit\n";
+        cout << "Enter your choice (1-6): ";
+        cin >> choice;
+
+        // Placeholder for switch logic
+        switch (choice) {
+            case 6:
+                cout << "Exiting the program.\n";
+                break;
+            default:
+                cout << "Feature not yet implemented.\n";
+        }
+
+    } while (choice != 6);
+
+    return 0;
+}
