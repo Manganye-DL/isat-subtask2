@@ -3,8 +3,14 @@ Name: Manganye DL
 iD: 0308195854085
 */
 #include <iostream>
+#include <string>
+#include <cstdlib>
+#include <ctime>
+#include <algorithm>
+
 using namespace std;
 
+// Convert decimal to binary
 string decimalToBinary(int decimal) {
     if (decimal == 0) return "0";
     string binary = "";
@@ -15,6 +21,7 @@ string decimalToBinary(int decimal) {
     return binary;
 }
 
+// Convert binary to decimal
 int binaryToDecimal(const string& binary) {
     int decimal = 0;
     for (char bit : binary) {
@@ -23,6 +30,7 @@ int binaryToDecimal(const string& binary) {
     return decimal;
 }
 
+// Convert decimal to hexadecimal
 string decimalToHex(int decimal) {
     if (decimal == 0) return "0";
     string hex = "";
@@ -34,6 +42,7 @@ string decimalToHex(int decimal) {
     return hex;
 }
 
+// Convert hexadecimal to decimal
 int hexToDecimal(const string& hex) {
     int decimal = 0;
     for (char digit : hex) {
@@ -48,6 +57,10 @@ int hexToDecimal(const string& hex) {
 
 int main() {
     int choice;
+    string input;
+    int decimal;
+
+    srand(time(0)); // Seed for random number generation
 
     do {
         cout << "\n--- Number System Converter ---\n";
@@ -60,7 +73,6 @@ int main() {
         cout << "Enter your choice (1-6): ";
         cin >> choice;
 
-        // Placeholder for switch logic
         switch (choice) {
             case 1:
                 cout << "Enter a decimal number: ";
@@ -94,8 +106,13 @@ int main() {
                 cout << "Invalid choice. Please enter a number between 1 and 6.\n";
         }
 
+        if (choice != 6) {
+            cout << "Press Enter to continue...";
+            cin.ignore();
+            cin.get();
+        }
+
     } while (choice != 6);
 
     return 0;
 }
-
