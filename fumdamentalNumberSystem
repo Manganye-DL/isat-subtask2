@@ -5,6 +5,24 @@ iD: 0308195854085
 #include <iostream>
 using namespace std;
 
+string decimalToBinary(int decimal) {
+    if (decimal == 0) return "0";
+    string binary = "";
+    while (decimal > 0) {
+        binary = char('0' + (decimal % 2)) + binary;
+        decimal /= 2;
+    }
+    return binary;
+}
+
+int binaryToDecimal(const string& binary) {
+    int decimal = 0;
+    for (char bit : binary) {
+        decimal = decimal * 2 + (bit - '0');
+    }
+    return decimal;
+}
+
 int main() {
     int choice;
 
@@ -32,3 +50,4 @@ int main() {
 
     return 0;
 }
+
